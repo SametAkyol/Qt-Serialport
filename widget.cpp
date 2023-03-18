@@ -6,7 +6,6 @@ Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
-
     ui->setupUi(this);
     qserial= new QSerialPort;
     Widget::fill_port_settings();
@@ -15,13 +14,13 @@ Widget::Widget(QWidget *parent)
 }
 
 
-
 Widget::~Widget()
 {
     delete ui;
     qserial->close();
     qDebug()<<"Com closed";
 }
+
 
 void Widget::fill_port_settings(){
 
@@ -33,14 +32,11 @@ void Widget::fill_port_settings(){
             ui->baudRate->addItem(QString::number(baud), baud);
         }
 
-
-
         ui->parity->addItem(QStringLiteral("None"), QSerialPort::NoParity);
         ui->parity->addItem(QStringLiteral("Even"), QSerialPort::EvenParity);
         ui->parity->addItem(QStringLiteral("Odd"), QSerialPort::OddParity);
         ui->parity->addItem(QStringLiteral("Mark"), QSerialPort::MarkParity);
         ui->parity->addItem(QStringLiteral("Space"), QSerialPort::SpaceParity);
-
 
         ui->dataBits->addItem(QStringLiteral("5"),QSerialPort::Data5);
         ui->dataBits->addItem(QStringLiteral("6"),QSerialPort::Data6);
@@ -73,11 +69,10 @@ void Widget::on_terminal_w_button_clicked()
         return;
     }
         Widget::serial_write();
-
 }
 
-void Widget::open_port(){
 
+void Widget::open_port(){
 
     QSerialPort::BaudRate baud = static_cast<QSerialPort::BaudRate>(ui->baudRate->currentData().toInt());
     QSerialPort::DataBits databits = static_cast<QSerialPort::DataBits>(ui->dataBits->currentData().toInt());
@@ -93,11 +88,13 @@ void Widget::open_port(){
     }
 }
 
+
 void Widget::serial_write(){
     QByteArray str=ui->terminal_write->displayText().toUtf8();
     qserial->write(str);
     ui->terminal_write->clear();
 }
+
 
 void Widget::on_pushButton_closeTerminal_clicked()
 {
@@ -118,20 +115,20 @@ void Widget::on_refresh_ports_clicked()
     }
 }
 
+
 void Widget::serial_read(){
-QString rec_data=qserial->readAll();
-ui->terminal->insertPlainText(rec_data);
+    QString rec_data=qserial->readAll();
+    ui->terminal->insertPlainText(rec_data);
 }
 
 
 void Widget::on_cleanTerminal_clicked()
 {
-
     ui->terminal->clear();
 }
+
 
 void Widget::error_message()
 {
     qDebug()<<qserial->error();
-
 }

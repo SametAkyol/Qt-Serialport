@@ -19,17 +19,11 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
-    QSerialPort *qserial;
     void fill_port_settings();
     void open_port();
     void serial_write();
     void serial_read();
     void error_message();
-    bool isOpen=false;
-
-
-
-
 
 private slots:
 
@@ -37,14 +31,12 @@ private slots:
     void on_terminal_w_button_clicked();
     void on_pushButton_closeTerminal_clicked();
     void on_refresh_ports_clicked();
-
     void on_cleanTerminal_clicked();
 
 private:
     Ui::Widget *ui;
-
+    QSerialPort *qserial;
 };
-
 
 
 #endif // WIDGET_H
