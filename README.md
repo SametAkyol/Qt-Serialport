@@ -1,1 +1,2 @@
-# Qt-Serialport![serial](https://user-images.githubusercontent.com/76923931/226137947-c0085e8d-6960-4c3a-8546-e23b3cd71366.png)
+
+![serial2](https://user-images.githubusercontent.com/76923931/226170372-2d08bcc1-460b-47a0-a9b8-9fca079f64fa.png)
