@@ -18,7 +18,7 @@ Widget::~Widget()
 {
     delete ui;
     qserial->close();
-    qDebug()<<"Com closed";
+
 }
 
 
@@ -90,8 +90,17 @@ void Widget::open_port(){
 
 
 void Widget::serial_write(){
-    QByteArray str=ui->terminal_write->displayText().toUtf8();
-    qserial->write(str);
+
+     QString str = ui->terminal_write->displayText();
+    if (ui->CR_cbox->isChecked() || ui->LF_cBox->isChecked()) {
+        if (ui->CR_cbox->isChecked()) {
+            str += "\r";
+        }
+        if (ui->LF_cBox->isChecked()) {
+            str += "\n";
+        }
+    }
+    qserial->write(str.toUtf8());
     ui->terminal_write->clear();
 }
 

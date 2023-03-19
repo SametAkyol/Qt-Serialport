@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>685</width>
-    <height>523</height>
+    <width>675</width>
+    <height>516</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Widget</string>
@@ -16,8 +22,8 @@
   <widget class="QPushButton" name="pushOpen">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>190</y>
+     <x>480</x>
+     <y>230</y>
      <width>93</width>
      <height>29</height>
     </rect>
@@ -30,7 +36,7 @@
    <property name="geometry">
     <rect>
      <x>580</x>
-     <y>60</y>
+     <y>10</y>
      <width>75</width>
      <height>25</height>
     </rect>
@@ -40,7 +46,7 @@
    <property name="geometry">
     <rect>
      <x>580</x>
-     <y>90</y>
+     <y>40</y>
      <width>75</width>
      <height>25</height>
     </rect>
@@ -50,7 +56,7 @@
    <property name="geometry">
     <rect>
      <x>580</x>
-     <y>120</y>
+     <y>70</y>
      <width>75</width>
      <height>25</height>
     </rect>
@@ -60,7 +66,7 @@
    <property name="geometry">
     <rect>
      <x>580</x>
-     <y>150</y>
+     <y>100</y>
      <width>75</width>
      <height>25</height>
     </rect>
@@ -70,7 +76,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>60</y>
+     <y>10</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -83,7 +89,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>90</y>
+     <y>40</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -96,7 +102,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>120</y>
+     <y>70</y>
      <width>63</width>
      <height>20</height>
     </rect>
@@ -109,7 +115,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>150</y>
+     <y>100</y>
      <width>63</width>
      <height>20</height>
     </rect>
@@ -170,8 +176,8 @@
   <widget class="QPushButton" name="pushButton_closeTerminal">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>190</y>
+     <x>580</x>
+     <y>230</y>
      <width>93</width>
      <height>29</height>
     </rect>
@@ -230,6 +236,32 @@
    </property>
    <property name="text">
     <string>x</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="CR_cbox">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>130</y>
+     <width>41</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CR</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="LF_cBox">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>150</y>
+     <width>93</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>LF</string>
    </property>
   </widget>
  </widget>
